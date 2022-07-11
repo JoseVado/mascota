@@ -19,6 +19,8 @@
         
             <div class="col-sm-auto">
                 <div class="container-fluid">
+                    <h5 class="text-center"><strong>Folio</strong></h5>
+                    <p class="text-center">{{ $mascota->id }}</p>
                     <h5 class="text-center"><strong>Tipo</strong></h5>
                     <p class="text-center">{{ $mascota->Tipo }}</p>
                     <h5 class="text-center"><strong>Edad</strong></h5>

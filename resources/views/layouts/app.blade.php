@@ -23,8 +23,9 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
+                <img src="{{ asset('').'logo.png' }}" width="50" alt="">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ 'Dogtor' }}
+                    <h3>Dogtor</h3> 
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
