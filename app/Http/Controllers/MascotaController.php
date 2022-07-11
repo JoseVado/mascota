@@ -17,7 +17,7 @@ class MascotaController extends Controller
     public function index()
     {
         //
-        $datos['mascotas'] = Mascota::paginate(1);
+        $datos['mascotas'] = Mascota::paginate(2);
         return view('Mascota.index',$datos);
     }
 
@@ -72,10 +72,11 @@ class MascotaController extends Controller
      * @param  \App\Models\Mascota  $mascota
      * @return \Illuminate\Http\Response
      */
-    public function show(Mascota $mascota)
+    public function show($id)
     {
         //
-
+        $mascota = Mascota::findOrFail($id);
+        return view('Mascota.show', compact('mascota'));
     }
 
     /**

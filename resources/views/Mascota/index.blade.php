@@ -3,9 +3,25 @@
 @section('content')
 <div class="container">
 
-
-
 <a href="{{ url('mascota/create') }}" class="btn btn-success"> Registrar nueva mascota</a>
+<div class="card-group" style="width:{{count($mascotas)==1?'300px':'900px'}}">
+    @foreach ($mascotas as $mascota)
+    <div class="card">
+        <img src="{{ asset('storage').'/'.$mascota->Foto }}" width="width:{{count($mascotas)==1?'300px':'900px'}}"  alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{ $mascota->Nombre }}</h5>
+            <p class="card-text">{{ $mascota->Enfermedades }}</p>
+            <p class="card-text"><small class="text-muted">{{isset($mascota->updated_at)?
+                'Modificado el:'.$mascota->updated_at:
+                "Creado el:".$mascota->created_at }}</small></p>
+            <a href="{{ url('/mascota/'.$mascota->id) }}" class="btn btn-warning">
+                Mostrar más
+            </a>
+        </div>
+    </div>
+    @endforeach
+</div>
+<!--
 <table class="table table-light">
     <thead class="thead-light">
         <tr>
@@ -46,6 +62,9 @@
         @endforeach
     </tbody>
 </table>
+-->
+
+
 {!! $mascotas->links() !!}
 </div>
 @endsection
